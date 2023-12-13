@@ -37,6 +37,7 @@ Before starting on this project, ensure you've covered:
   ```
 
 2. Inside the `transaction` directory, create a new file named `transaction.model.ts`. Create an interface for the transaction which should include `amount`, `type`, and `title`. `type` could be Enumerate type either 'income' or 'expense'.
+
 3. `TransactionComponent`: This component can be reused for both Income and Expense entries.
 
    - Properties:
@@ -44,7 +45,7 @@ Before starting on this project, ensure you've covered:
      - `@Output() onTransactionAdded`: Use the `@Output()` decorator to emit an event when a transaction is added.
      - `@Input() transactionType`: Accept an input to determine if it's handling an income or expense.
    - Methods:
-     - `addTransaction(amount: number, title: string)`: Emit the transaction (type `Transation`) to the parent. _Hint:_ use the paramaters `amount` and `title`, and the input `transactionType` to create new transaction object. Transaction event can be emitted using syntax `this.onTransactionAdded.emit(newTransaction);`
+     - `addTransaction(amount: number, title: string)`: Emit the transaction (type `Transaction`) to the parent. _Hint:_ use the parameters `amount` and `title`, and the input `transactionType` to create new transaction object. Transaction event can be emitted using syntax `this.onTransactionAdded.emit(newTransaction);`
    - In `transaction.component.html`, design a basic form to capture transaction details. Use the `transactionType` input to display the correct title (either "Income" or "Expense") on the form. Bind the form elements to the transaction attributes and include a button to submit the form.
 
 4. `BalanceComponent`: Displays the current balance and provides options to transfer money to the saving account.
@@ -72,8 +73,8 @@ Before starting on this project, ensure you've covered:
   - `currentBalance`: Current balance.
 - Methods:
   - `handleAddTransaction(transaction: Transaction) `: This method updates the `currentBalance` when transaction is added in the `TransactionComponent`.
-  - `handleTransferToBalance(amount: number)`: This method updates the `currentBalance` and `SavingAmount` when transafering money from saving back to balance in `SavingComponent`
-  - `handleTransferToSaving(amount: number)`: This method updates the `currentBalance` and `SavingAmount` when transafering money from balance to saving in `BalanceComponent`.
+  - `handleTransferToBalance(amount: number)`: This method updates the `currentBalance` and `SavingAmount` when transfer money from saving back to balance in `SavingComponent`
+  - `handleTransferToSaving(amount: number)`: This method updates the `currentBalance` and `SavingAmount` when transfer money from balance to saving in `BalanceComponent`.
 - `app.component.html` example:
 
   ```

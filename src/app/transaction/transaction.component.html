@@ -1,0 +1,10 @@
+<p>transaction form</p>
+<form [formGroup]="addTransaction" (ngSubmit)="addTransaction()">
+  <label for="title">Title:</label>
+  <input type="text" id="title" formControlName="title" />
+
+  <label for="amount">Author:</label>
+  <input type="number" id="amount" formControlName="amount" />
+
+  <button type="submit" [disabled]="addTransaction.invalid">Add</button>
+</form>
